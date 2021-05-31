@@ -1,0 +1,15 @@
+<a style="cursor: pointer;" class="list-group-item carddist" [routerLink] = "['/recipes', index]" routerLinkActive="active" style="background-color: rgb(68, 68, 68);color: rgb(226, 226, 226);">
+    <div class="card">
+        <div class="row">
+            <div class="col-xs-8" style="float: left;">
+                <h2 class="list-group-item-heading" style="color: rgb(226, 226, 226);">{{thisRecipe.name}}</h2>
+                <div class="card-body">
+                    <p class="card-text">{{thisRecipe.description}}</p>
+                </div>
+            </div>
+            <div class="col-xs-4" style="float: right;">
+                <img [src]="thisRecipe.imagePath" [alt]="thisRecipe.name" class="card-img-top img-responsive">
+            </div>
+        </div>
+    </div>
+</a>

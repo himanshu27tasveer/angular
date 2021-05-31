@@ -1,0 +1,33 @@
+<div class="row">
+    <div class="col-xs-12" style="color: rgb(233, 233, 233);">
+        <form [formGroup]="shoppingEditForm" (ngSubmit)="onModifyOrAdd()">
+            <div class="row">
+                <div class="col-sm-5 form-group">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" class="form-control" name="name"
+                     formControlName="name" />
+                </div>
+                <div class="col-sm-2 form-group">
+                    <label for="amount">Amount</label>
+                    <input type="number" id="amount" class="form-control" name="amount"
+                    formControlName="amount" 
+                    pattern="^[1-9]+[0-9]*$"/>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xs-12">
+                    <button class="btn btn-success" style="margin-right: 20px;" type="submit"
+                     [disabled]="!shoppingEditForm!.valid" >{{ editMode ? 'Update' : 'Add' }}</button>
+
+                    <button class="btn btn-danger" style="margin-right: 20px;" type="button" (click)="onDelete()"
+                     *ngIf="editMode">
+                        Delete
+                    </button>
+
+                    <button class="btn btn-info" style="margin-right: 20px;" type="button" (click)="onClear()">Clear</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
